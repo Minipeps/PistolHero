@@ -10,12 +10,17 @@ namespace PistolHero
     public class PistolHeroGame : Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-        
+
+        AssetManager assetManager;
+
+        Asset pifix;
+
+
         public PistolHeroGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            assetManager = new AssetManager(this);
         }
 
         /// <summary>
@@ -27,7 +32,8 @@ namespace PistolHero
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            pifix = new Asset(this, "pifamax", new Vector2(0, 0));
+            assetManager.Initialize();
             base.Initialize();
         }
 
@@ -38,9 +44,9 @@ namespace PistolHero
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            assetManager.LoadAsset(pifix);
         }
 
         /// <summary>
@@ -76,6 +82,7 @@ namespace PistolHero
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            assetManager.DrawAssets();
 
             base.Draw(gameTime);
         }
