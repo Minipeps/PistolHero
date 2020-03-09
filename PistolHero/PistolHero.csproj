@@ -46,6 +46,7 @@
     <Compile Include="AssetManager.cs" />
     <Compile Include="PistolHeroGame.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -32,7 +32,7 @@ namespace PistolHero
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            pifix = new Asset(this, "pifamax", new Vector2(0, 0));
+            pifix = new Player(this, "pifamax", new Vector2(0, 0));
             assetManager.Initialize();
             base.Initialize();
         }
@@ -69,6 +69,7 @@ namespace PistolHero
                 Exit();
 
             // TODO: Add your update logic here
+            pifix.Update(gameTime);
 
             base.Update(gameTime);
         }

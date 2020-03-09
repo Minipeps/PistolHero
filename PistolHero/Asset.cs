@@ -5,13 +5,13 @@ namespace PistolHero
 {
     public class Asset : GameComponent
     {
-        string m_textureName;
-        Vector2 m_position;
+        protected string m_textureName;
+        protected Vector2 m_position;
 
         public Asset(Game game) : base(game)
         { 
             m_textureName = "";
-            m_position = new Vector2(0, 0);
+            m_position = new Vector2();
         }
 
         public Asset(Game game, string textureName, Vector2 position) : base(game)

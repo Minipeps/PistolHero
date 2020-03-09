@@ -19,6 +19,8 @@ namespace PistolHero
             m_spriteBatch = new SpriteBatch(Game.GraphicsDevice);
             m_textures = new Dictionary<string, Texture2D>();
             m_assetList = new List<Asset>();
+
+            base.Initialize();
         }
 
         public void LoadAsset(Asset asset)
@@ -52,10 +54,12 @@ namespace PistolHero
 
         public void DrawAssets()
         {
+            Vector2 pos;
             m_spriteBatch.Begin();
             foreach (Asset asset in m_assetList)
             {
-                m_spriteBatch.Draw(GetTexture2D(asset.GetTexName()), new Rectangle(0, 0, 100, 100), Color.White);
+                pos = asset.GetPosition();
+                m_spriteBatch.Draw(GetTexture2D(asset.GetTexName()), new Rectangle((int) pos.X, (int) pos.Y, 100, 100), Color.White);
             }
             m_spriteBatch.End();
         }
